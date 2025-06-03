@@ -1,0 +1,333 @@
+/* Estilos generales para la página de reservas */
+body {
+    font-family: 'Arial', sans-serif; /* O la fuente que uses en custom.css */
+    background-color: #f4f4f4; /* Un fondo suave para la página */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px; /* Ajusta según el layout de skeleton */
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+/* Estilos para la página de reservas */
+
+#reservas-container {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+#calendario-container h2,
+#horarios-container h2,
+#confirmacion-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#calendario-placeholder {
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#calendario-placeholder:hover {
+    background-color: #e9e9e9;
+}
+
+#horarios-disponibles {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espacio entre botones de horario */
+    justify-content: center; /* Centra los botones si no ocupan todo el ancho */
+}
+
+.horario-btn {
+    padding: 8px 12px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.horario-btn.seleccionado {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+
+#form-reserva label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#form-reserva input[type="text"],
+#form-reserva input[type="tel"],
+#form-reserva input[type="email"],
+#form-reserva textarea {
+    margin-bottom: 15px;
+}
+
+#form-reserva p {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+#form-reserva p span {
+    font-weight: bold;
+    color: #d33a78; /* Un color que destaque */
+}
+
+#mensaje-horarios {
+    color: #777;
+    text-align: center;
+}
+
+/* Footer pegado abajo si el contenido es corto */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#reservas-container {
+    flex-grow: 1;
+}
+
+.footer {
+    background-color: #333;
+    color: #ccc;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* Empuja el footer hacia abajo */
+}
+
+.footer p {
+    color: #000000 !important; /* Cambia el color del texto del copyright a negro */
+    margin: 0;
+}
+
+/* Estilos para el Calendario Personalizado - Refinados */
+#custom-calendar-container {
+    margin: 20px 0; /* Ajustar margen si es necesario dentro de su columna */
+    padding: 20px;
+    border: 1px solid #e1e1e1; /* Borde más suave */
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.calendar-header button {
+    background-color: #5cb85c; /* Un verde amigable, ajústalo a tu paleta */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.calendar-header .month-year-selectors {
+    display: flex; /* Alinea los selectores horizontalmente */
+    gap: 10px; /* Espacio entre los selectores de mes y año */
+}
+
+.calendar-header select.button {
+    /* Hereda algunos estilos de .button de Skeleton, pero podemos refinar */
+    padding: 6px 10px; /* Ajusta el padding si es necesario */
+    height: auto; /* Permite que el alto se ajuste al contenido */
+    line-height: normal; /* Restablece line-height si .button lo altera mucho */
+    background-color: #fff; /* Fondo blanco para los selects */
+    border: 1px solid #ccc; /* Borde estándar */
+}
+
+.calendar-header button:hover {
+    background-color: #4cae4c; /* Un verde más oscuro al pasar el mouse */
+}
+
+#month-year-display {
+    font-size: 1.6em; /* Un poco más grande */
+    font-weight: 600; /* Semibold */
+    color: #333;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px; /* Un poco más de espacio */
+    text-align: center;
+}
+
+.calendar-day-header {
+    font-weight: 600; /* Semibold */
+    padding: 10px 2px; /* Ajustar padding si es necesario para nombres largos */
+    color: #555;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    font-size: 0.8em; /* Reducir un poco si los nombres completos son muy largos */
+    overflow: hidden; /* Evita que el texto se desborde si es muy largo */
+    text-overflow: ellipsis; /* Añade puntos suspensivos si el texto se corta */
+    white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */
+}
+
+.calendar-day {
+    padding: 12px 5px; /* Más padding vertical */
+    border: 1px solid #f0f0f0; /* Borde muy sutil */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.1s ease;
+    font-size: 0.95em;
+}
+
+.calendar-day:hover {
+    background-color: #e9f5ff; /* Un azul claro al pasar el mouse */
+    color: #007bff;
+    transform: translateY(-1px);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.calendar-day.empty {
+    background-color: transparent;
+    border: none;
+    cursor: default;
+    box-shadow: none;
+    transform: none;
+}
+
+.calendar-day.today {
+    background-color: #fff3cd; /* Amarillo suave para hoy */
+    font-weight: 700; /* Bold */
+    color: #856404; /* Texto oscuro para contraste */
+    border: 1px solid #ffeeba;
+}
+
+.calendar-day.today:hover {
+    background-color: #ffeeba;
+}
+
+.calendar-day.selected {
+    background-color: #007bff; /* Azul primario para seleccionado */
+    color: white;
+    font-weight: 700;
+    border-color: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.calendar-day.selected:hover {
+    background-color: #0069d9;
+}
+
+/* Ajustes para los botones de horarios y formulario */
+#horarios-disponibles .btn {
+    margin: 5px;
+    padding: 8px 12px;
+    font-size: 0.9em;
+}
+
+#horarios-disponibles .btn.btn-primary { /* Asumiendo que usas esta clase para el seleccionado */
+    background-color: #007bff !important; /* Asegurar que sobreescriba */
+    color: white !important;
+}
+
+#horarios-disponibles .btn.btn-outline-primary:hover {
+    background-color: #e9f5ff;
+}
+
+#form-reserva {
+    margin-top: 25px;
+    padding: 20px;
+    border: 1px solid #e1e1e1;
+    border-radius: 6px;
+    background-color: #fdfdfd;
+}
+
+/* Estilos para el contenedor de confirmación */
+#confirmacion-reserva {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #e9f5ff; /* Fondo azul claro */
+    border: 1px solid #b8daff; /* Borde azul más oscuro */
+    border-radius: 6px;
+}
+
+#confirmacion-reserva h3 {
+    margin-top: 0;
+    color: #004085; /* Color de texto azul oscuro */
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+#confirmacion-reserva p {
+    margin-bottom: 5px;
+    font-size: 1em;
+}
+
+#confirmacion-reserva p strong {
+    color: #004085;
+}
+
+/* Estilos para los inputs y labels del formulario, si Skeleton no los cubre suficientemente */
+#form-reserva label {
+    display: block;
+    margin-bottom: .5rem;
+    font-weight: 600;
+}
+
+#form-reserva input[type="text"],
+#form-reserva input[type="email"],
+#form-reserva input[type="tel"],
+#form-reserva textarea {
+    display: block;
+    width: 100%;
+    padding: .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-bottom: 1rem;
+}
+
+#form-reserva input[type="text"]:focus,
+#form-reserva input[type="email"]:focus,
+#form-reserva input[type="tel"]:focus,
+#form-reserva textarea:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
+}
+
+#form-reserva button[type="submit"] {
+    background-color: #28a745; /* Verde para el botón de submit */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+#form-reserva button[type="submit"]:hover {
+    background-color: #218838;
+}

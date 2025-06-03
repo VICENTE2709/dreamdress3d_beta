@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Seleccionar Método de Pago</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; display: flex; justify-content: space-between; }
+    .formulario { width: 60%; }
+    .resumen { width: 35%; border-left: 1px solid #ccc; padding-left: 20px; }
+    label, select, input[type=radio] { margin: 10px 0; display: inline-block; }
+    .opcion-pago { display: flex; align-items: center; margin: 5px 0; }
+    .opcion-pago span { margin-left: 10px; }
+    button { margin-top: 20px; padding: 10px 20px; }
+  </style>
+</head>
+<body>
+  <div class="formulario">
+    <h1>Selecciona tu método de pago</h1>
+
+    <form id="form-pago">
+      <label>Método de Pago:</label>
+      <select id="metodo_pago" required>
+        <option value="1">Efectivo</option>
+        <option value="2">QR</option>
+      </select>
+
+      <div id="opciones-qr" style="display: none;">
+        <label>Tipo de Pago (si eliges QR):</label>
+        <div class="opcion-pago">
+          <input type="radio" name="tipo_pago" value="1" required>
+          <span>Pago Total</span>
+        </div>
+        <div class="opcion-pago">
+          <input type="radio" name="tipo_pago" value="2">
+          <span>Pago en Cuotas</span>
+        </div>
+
+        <div id="monto-cuota" style="display: none;">
+          <label>Monto a pagar ahora:</label>
+          <input type="number" id="monto_parcial" min="1">
+        </div>
+
+        <div id="qr-imagen" style="margin-top: 10px;">
+          <p>Escanea el siguiente QR para pagar:</p>
+          <img src="qr_de_ejemplo.png" width="150" alt="Código QR">
+        </div>
+      </div>
+
+      <button type="submit">Proceder con el pago</button>
+    </form>
+  </div>
+
+  <div class="resumen">
+    <h2>Resumen de Compra</h2>
+    <p><strong>Total:</strong> <span id="resumen_total">0 Bs</span></p>
+    <p><strong>Advertencia:</strong> Si paga en cuotas, no debe exceder este monto.</p>
+  </div>
+
+  <script src="seleccion_pago.js"></script>
+</body>
+</html>
+
+

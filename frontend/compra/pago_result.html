@@ -1,0 +1,84 @@
+<!-- Plantilla base que se adaptará a los 3 casos -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Resumen de Compra</title>
+  <link rel="stylesheet" href="/dreamdressv1/frontend/css/estilos.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+    .resumen { border: 1px solid #ccc; padding: 20px; border-radius: 8px; max-width: 700px; margin: auto; }
+    .resumen h2 { color: #333; }
+    .gracias { text-align: center; margin-top: 30px; color: #2e7d32; font-size: 20px; }
+    .tienda { margin-top: 10px; font-style: italic; }
+    .totales { font-weight: bold; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="resumen">
+    <h2 id="titulo"></h2>
+    <p id="mensaje"></p>
+    <div id="detalle"></div>
+    <div id="extra"></div>
+    <p class="gracias" id="gracias"></p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const tipo = params.get('tipo'); // efectivo, total, cuotas
+
+    const resumen = document.getElementById('detalle');
+    const titulo = document.getElementById('titulo');
+    const mensaje = document.getElementById('mensaje');
+    const extra = document.getElementById('extra');
+    const gracias = document.getElementById('gracias');
+
+    const direccionTienda = '📍 Calle Comercio #123, La Paz, Bolivia';
+
+    async function cargarResumen() {
+      const usuario_id = localStorage.getItem('usuario_id');
+      if (!usuario_id) return;
+
+      try {
+        const res = await fetch(`/dreamdressv1/backend/api/resumen_carrito_api.php?usuario_id=${usuario_id}`);
+        const data = await res.json();
+
+        if (data.status === 'success') {
+          const total = data.productos.reduce((sum, p) => sum + parseFloat(p.Subtotal), 0);
+          let contenido = `<table><tr><th>Producto</th><th>Cantidad</th><th>Precio</th></tr>`;
+          data.productos.forEach(p => {
+            contenido += `<tr><td>${p.NombreProducto}</td><td>${p.Cantidad}</td><td>${p.Subtotal} Bs</td></tr>`;
+          });
+          contenido += `</table><p class='totales'>Total: ${total.toFixed(2)} Bs</p>`;
+          resumen.innerHTML = contenido;
+
+          if (tipo === 'efectivo') {
+            titulo.textContent = 'Resumen de Pago en Tienda Física';
+            mensaje.textContent = 'Puedes acercarte a la tienda para pagar el total de tu compra. No olvides este resumen:';
+            extra.textContent = `Dirección de la tienda: ${direccionTienda}`;
+            gracias.textContent = '¡Gracias por tu compra!';
+          } else if (tipo === 'total') {
+            titulo.textContent = 'Factura Digital';
+            mensaje.textContent = 'Tu factura ha sido generada con éxito. Revisa tu correo para más detalles:';
+            extra.textContent = '📧 Se ha enviado una copia digital de la factura a tu correo electrónico.';
+            gracias.textContent = '¡Gracias por confiar en DreamDress!';
+          } else if (tipo === 'cuotas') {
+            titulo.textContent = 'Recibo de Primer Pago';
+            mensaje.textContent = 'Tu primer pago ha sido registrado con éxito. El saldo restante se pagará en tienda:';
+            extra.innerHTML = `📌 Dirección de pago del saldo: <b>${direccionTienda}</b><br>📧 Se ha enviado el recibo al correo registrado.`;
+            gracias.textContent = '¡Gracias por tu preferencia!';
+          }
+
+        } else {
+          resumen.innerHTML = '<p>Error al cargar los datos del carrito.</p>';
+        }
+      } catch (e) {
+        resumen.innerHTML = '<p>Ocurrió un error al cargar el resumen.</p>';
+        console.error(e);
+      }
+    }
+
+    cargarResumen();
+  </script>
+</body>
+</html>

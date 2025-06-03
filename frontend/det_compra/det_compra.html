@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Pagina Producto</title>
+		<link rel="stylesheet" href="det_comprastyle.css" />
+	</head>
+	<body>
+		<header>
+			<h1>Logo</h1>
+		</header>
+
+		<div class="container-title">Productos de Novia</div>
+
+		<main>
+			<div class="container-img">
+				<img
+					src="https://i.pinimg.com/736x/49/5c/2c/495c2c0b181e778031bb603144e2d45f.jpg"
+					alt="imagen-producto"
+					height="650"
+					width="500"
+				/>
+			</div>
+			<div class="container-info-product">
+				<span>PRECIO:</span>
+				<div class="container-price">
+					<span>1550Bs</span>
+					<i class="fa-solid fa-angle-right"></i>
+				</div>
+
+				<div class="container-details-product">
+					<div class="form-group">
+						<label for="colour">Color</label>
+						<select name="colour" id="colour">
+							<option disabled selected value="">
+								Escoge una opción
+							</option>
+							<option value="rojo">Rojo</option>
+							<option value="blanco">Blanco</option>
+							<option value="beige">Amarillo</option>
+							<option value="beige">Verde</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="size">Talla</label>
+						<select name="size" id="size">
+							<option disabled selected value="">
+								Escoge una opción
+							</option>
+							<option value="40">S</option>
+							<option value="42">M</option>
+							<option value="43">L</option>
+							<option value="44">XL</option>
+						</select>
+					</div>
+					<button class="btn-clean">Limpiar</button>
+				</div>
+
+				<div class="container-add-cart">
+					<div class="container-quantity">
+						<input
+							type="number"
+							placeholder="1"
+							value="1"
+							min="1"
+							class="input-quantity"
+						/>
+						<div class="btn-increment-decrement">
+							<i class="fa-solid fa-chevron-up" id="increment"></i>
+							<i class="fa-solid fa-chevron-down" id="decrement"></i>
+						</div>
+					</div>
+					<button class="btn-add-to-cart">
+						<i class="fa-solid fa-plus"></i>
+						Añadir al carrito
+					</button>
+				</div>
+
+				<div class="container-description">
+					<div class="title-description">
+						<h4>Descripción</h4>
+						<i class="fa-solid fa-chevron-down"></i>
+					</div>
+					<div class="text-description">
+						<p>
+							Lorem ipsum dolor, sit amet consectetur adipisicing
+							elit. Laboriosam iure provident atque voluptatibus
+							reiciendis quae rerum, maxime placeat enim cupiditate
+							voluptatum, temporibus quis iusto. Enim eum qui delectus
+							deleniti similique? Lorem, ipsum dolor sit amet
+							consectetur adipisicing elit. Sint autem magni earum est
+							dolorem saepe perferendis repellat ipsam laudantium cum
+							assumenda quidem quam, vero similique? Iusto officiis
+							quod blanditiis iste?
+						</p>
+					</div>
+				</div>
+
+				<div class="container-additional-information">
+					<div class="title-additional-information">
+						<h4>Información adicional</h4>
+						<i class="fa-solid fa-chevron-down"></i>
+					</div>
+					<div class="text-additional-information hidden">
+						<p>-----------</p>
+					</div>
+				</div>
+
+				<div class="container-reviews">
+					<div class="title-reviews">
+						<h4>Reseñas</h4>
+						<i class="fa-solid fa-chevron-down"></i>
+					</div>
+					<div class="text-reviews hidden">
+						<p>-----------</p>
+					</div>
+				</div>
+
+				<div class="container-social">
+					<span>Compartir</span>
+					<div class="container-buttons-social">
+						<a href="#"><i class="fa-solid fa-envelope"></i></a>
+						<a href="#"><i class="fa-brands fa-facebook"></i></a>
+						<a href="#"><i class="fa-brands fa-twitter"></i></a>
+						<a href="#"><i class="fa-brands fa-instagram"></i></a>
+						<a href="#"><i class="fa-brands fa-pinterest"></i></a>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<section class="container-related-products">
+			<h2>Productos Relacionados</h2>
+			<div class="card-list-products">
+				<div class="card">
+					<div class="card-img">
+						<img
+							src="https://www.mivestidoblanco.com/wp-content/uploads/2022/08/vestidos-de-novia-con-manga.jpeg"
+							alt="producto-1"
+						/>
+					</div>
+					<div class="info-card">
+						<div class="text-product">
+							<h3>Nike - Roshe Run</h3>
+							<p class="category">Footwear, Sneakers</p>
+						</div>
+						<div class="price">$85.00</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-img">
+						<img
+							src="https://p1.pxfuel.com/preview/625/204/7/grooms-wedding-marriage-altar.jpg"
+							alt="producto-2"
+						/>
+					</div>
+					<div class="info-card">
+						<div class="text-product">
+							<h3>Common Projects Achilles</h3>
+							<p class="category">Footwear, Sneakers</p>
+						</div>
+						<div class="price">$255.00</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-img">
+						<img
+							src="https://sarah-houston.com/cdn/shop/files/769298d290e2b8220e339fd2e65b19a3.jpg?v=1743221332"
+							alt="producto-3"
+						/>
+					</div>
+					<div class="info-card">
+						<div class="text-product">
+							<h3>Adidas - Boston Super OG</h3>
+							<p class="category">Footwear, Sneakers</p>
+						</div>
+						<div class="price">$105.00</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-img">
+						<img
+							src="https://m.media-amazon.com/images/I/61AG-FxfnfL._AC_UY1000_.jpg"
+							alt="producto-4"
+						/>
+					</div>
+					<div class="info-card">
+						<div class="text-product">
+							<h3>Common Projects Achilles</h3>
+							<p class="category">Footwear, Sneakers</p>
+						</div>
+						<div class="price">$250.00</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer>
+			<p>Footer</p>
+		</footer>
+
+		<script
+			src="https://kit.fontawesome.com/81581fb069.js"
+			crossorigin="anonymous"
+		></script>
+		<script src="det_compra.js"></script>
+	</body>
+</html>

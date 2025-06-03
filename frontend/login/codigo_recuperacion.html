@@ -1,0 +1,29 @@
+<!-- codigo_recuperacion.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Recuperar Contraseña</title>
+</head>
+<body>
+  <h2>Recuperar Contraseña</h2>
+
+  <!-- Paso 1: Ingresar correo -->
+  <form id="form-recuperar">
+    <label for="correo">Correo electrónico:</label><br>
+    <input type="email" id="correo" required><br><br>
+    <button type="submit">Enviar código</button>
+  </form>
+
+  <!-- Paso 2: Verificar código (se muestra después del paso 1) -->
+  <form id="form-verificar" style="display:none; margin-top: 30px;">
+    <label for="codigo">Código de verificación:</label><br>
+    <input type="text" id="codigo" required><br><br>
+    <button type="submit">Verificar</button>
+  </form>
+
+  <div id="mensaje"></div>
+
+  <script src="codigo_recuperacion.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recibo de Pago en Cuotas</title>
+  <link rel="stylesheet" href="../estilos/factura.css">
+</head>
+<body>
+  <div class="factura-container">
+    <h2>Recibo de Pago - Cuota Inicial</h2>
+    <div class="cliente-info" id="cliente-info">
+      <!-- Aquí se insertan los datos del cliente -->
+    </div>
+
+    <h3>Detalle de la Compra</h3>
+    <table class="factura-tabla">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Precio Unitario</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody id="detalle-productos">
+        <!-- Filas con productos -->
+      </tbody>
+    </table>
+
+    <div class="resumen-pago">
+      <p><strong>Total Compra:</strong> <span id="total-compra"></span></p>
+      <p><strong>Pago Inicial:</strong> <span id="pago-inicial"></span></p>
+      <p><strong>Saldo Restante:</strong> <span id="saldo-restante"></span></p>
+    </div>
+
+    <div class="instrucciones">
+      <p>⚠️ El saldo restante debe ser cancelado al momento de recoger su pedido en tienda física.</p>
+      <p>📍 Dirección: Calle Comercio #123, La Paz, Bolivia</p>
+    </div>
+
+    <p class="agradecimiento">Gracias por su preferencia. 💙</p>
+  </div>
+
+  <script src="recibo_cuotas.js"></script>
+</body>
+</html>

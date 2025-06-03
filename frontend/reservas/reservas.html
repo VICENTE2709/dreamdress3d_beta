@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - DreamDress</title>
+    <!-- Estilos globales -->
+    <link rel="stylesheet" href="../main_menu/css/normalize.css">
+    <link rel="stylesheet" href="../main_menu/css/skeleton.css">
+    <link rel="stylesheet" href="../main_menu/css/custom.css">
+    <!-- Estilos específicos de la página de reservas -->
+    <link rel="stylesheet" href="reservas.css">
+</head>
+<body>
+    <header id="header" class="header">
+        <nav class="navbar">
+            <a href="../login/login.html">Usuario</a>
+            <a href="../main_menu/index.html">Home</a>
+            <a href="../catalogo/catalogo.html">Categorías</a>
+            <a href="#">Editor</a> 
+            <a href="reservas.html" class="active">Reservas</a>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="twelve columns">
+                    <h1 style="text-align: center; margin-top: 20px;">Agenda tu Cita</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mt-5">
+        <h1>Realiza tu Reserva</h1>
+        <p>Selecciona una fecha y hora para tu cita.</p>
+
+        <div class="row">
+            <div class="seven columns">
+                <h2>Calendario</h2>
+                <div id="custom-calendar-container">
+                    <div class="calendar-header">
+                        <button id="prev-month-btn" class="button">&lt; Mes Anterior</button>
+                        <div class="month-year-selectors">
+                            <select id="month-select" class="button"></select>
+                            <select id="year-select" class="button"></select>
+                        </div>
+                        <button id="next-month-btn" class="button">Mes Siguiente &gt;</button>
+                    </div>
+                    <div id="calendar-grid" class="calendar-grid">
+                        <!-- Los días se generarán aquí con JavaScript -->
+                    </div>
+                </div>
+            </div>
+            <div class="five columns">
+                <h2>Horarios Disponibles</h2>
+                <p id="mensaje-horarios">Por favor, selecciona primero una fecha.</p>
+                <div id="horarios-disponibles">
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 30px;">
+            <div class="twelve columns" id="confirmacion-container">
+                <h2>3. Confirma tu Cita</h2>
+                <form id="form-reserva">
+
+
+                    <div class="row">
+                        <div class="twelve columns">
+                            <label for="comentarios">Comentarios Adicionales (opcional)</label>
+                            <textarea class="u-full-width" id="comentarios" name="comentarios"></textarea>
+                        </div>
+                    </div>
+                    <p>Fecha Seleccionada: <span id="fecha-seleccionada-confirmacion">N/A</span></p>
+                    <p>Hora Seleccionada: <span id="hora-seleccionada-confirmacion">N/A</span></p>
+                    <button type="submit" class="button button-primary u-full-width">Confirmar Reserva</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="container">
+            <p>&copy; 2024 DreamDress. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="reservas.js" defer></script>
+</body>
+</html>

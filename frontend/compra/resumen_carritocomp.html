@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Resumen de Compra</title>
+</head>
+<body>
+  <h1>Resumen de tu Compra</h1>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Nombre</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody id="tabla-resumen"></tbody>
+  </table>
+
+  <h2 id="total">Total: 0 Bs</h2>
+
+  <button onclick="window.location.href='seleccion_pago.html'" id="confirmar">Confirmar Compra</button>
+  <br><br>
+  <button onclick="window.location.href='../main_menu/index.html'">Atrás</button>
+
+  <script src="resumen_carritocomp.js"></script>
+</body>
+</html>
